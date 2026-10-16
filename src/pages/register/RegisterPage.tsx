@@ -4,10 +4,10 @@ import {useNavigate, Link} from "react-router";
 import axios from "axios";
 
 const API_URL = "https://qrcode31kn-api.itstep.click";
-const REGISTER_URL = `${API_URL}/api/Account/Register`; // ← звір зі Swagger
+const REGISTER_URL = `${API_URL}/api/Account/Register`;
 
 interface IRegisterForm {
-    firstName: string;   // ← звір назви полів зі Swagger
+    firstName: string;
     lastName: string;
     email: string;
     password: string;
@@ -33,7 +33,6 @@ const RegisterPage = () => {
     const onSubmit = async (data: IRegisterForm) => {
         setServerError(null);
 
-        // Якщо Swagger вимагає multipart/form-data (є файл), використовуємо FormData
         const formData = new FormData();
         formData.append("firstName", data.firstName);
         formData.append("lastName", data.lastName);
