@@ -121,21 +121,7 @@ const RegisterPage = () => {
                         )}
                     </div>
 
-                    <div>
-                        <input
-                            type="password"
-                            placeholder="Підтвердіть пароль"
-                            className={inputClass}
-                            {...register("confirmPassword", {
-                                required: "Підтвердіть пароль",
-                                validate: value =>
-                                    value === watch("password") || "Паролі не збігаються",
-                            })}
-                        />
-                        {errors.confirmPassword && (
-                            <p className="text-sm text-red-500">{errors.confirmPassword.message}</p>
-                        )}
-                    </div>
+
 
                     <div>
                         <label className="mb-1 block text-sm text-gray-600">Фото</label>
